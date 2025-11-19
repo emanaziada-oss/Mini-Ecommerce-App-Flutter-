@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "451566927363",
+    "firebase_url": "https://mystore-fb023-default-rtdb.firebaseio.com",
+    "project_id": "mystore-fb023",
+    "storage_bucket": "mystore-fb023.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451566927363:android:168cbc3354fbfa1a0c9836",
+        "android_client_info": {
+          "package_name": "com.iti.myproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy8nZjcqwsO8ld5riPvLfaV63Bo6nxIRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
