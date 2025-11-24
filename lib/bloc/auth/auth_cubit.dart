@@ -15,4 +15,23 @@ class AuthCubit extends Cubit<AuthState>{
             emit(AuthFailure(e.message ?? 'Failed to sign in'));
         }
     }
+    Future<void> register (String email, String pass) async{
+        emit(AuthLoading());
+        try{
+            User? user = await FirebaseAuthService.instance.register(email, pass);
+            emit(AuthSuccess(user: user));
+        } on FirebaseAuthException catch(e){
+            emit(AuthFailure(e.message ?? 'Failed to register'));
+        }
+    }
+
+    Future<void> SignOut() async{
+        emit(AuthLoading());
+        try{
+            await FirebaseAuthService.instance.signOut();
+            emit(AuthLoggedOut());
+        } on FirebaseAuthException catch(e){
+            emit(AuthFailure(e.message ?? 'Failed to sign in'));
+        }
+    }
 }

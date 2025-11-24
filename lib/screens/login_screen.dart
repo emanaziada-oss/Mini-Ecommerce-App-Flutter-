@@ -228,7 +228,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/bloc/auth/auth_cubit.dart';
-import 'package:myproject/screens/product_screen.dart';
+import 'package:myproject/screens/product/product_wrapper.dart';
+import 'package:myproject/screens/product/widget/product_screen.dart';
 import '../widget/text_form_field.dart';
 import 'package:myproject/bloc/auth/auth_state.dart';
 class LoginForm extends StatefulWidget {
@@ -254,9 +255,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => AuthCubit(),
-      child: SafeArea(
+    return SafeArea(
         child: Scaffold(
           appBar: AppBar(
             title: const Text('Sign In'),
@@ -302,7 +301,7 @@ class _LoginFormState extends State<LoginForm> {
                                 if (!context.mounted) return;
                                 Navigator.pushReplacement(
                                   context,
-                                  MaterialPageRoute(builder: (_) => const ProductsScreen()),
+                                  MaterialPageRoute(builder: (_) => const ProductsPageWrapper()),
                                 );
                               });
                             } else if (state is AuthFailure) {
@@ -401,7 +400,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }
