@@ -6,12 +6,12 @@ class TodoModel extends Equatable {
     required this.title,
     required this.isCompleted,
 });
-  final int id;
+   String id;
   final String title;
   final bool isCompleted;
 
   TodoModel copyWith({
-     int? id,
+    String? id,
      String? title,
      bool? isCompleted,
 }) {
@@ -21,21 +21,20 @@ class TodoModel extends Equatable {
       isCompleted : isCompleted ?? this.isCompleted,
     );
   }
-  // factory TodoModel.fromJson(Map<String,dynamic> json){
-  //   return TodoModel(
-  //     id: json["id"],
-  //     title: json["title"],
-  //     desc: json["desc"] ,
-  //     isCompleted : json["isCompleted"]
-  //   );
-  // }
-  // Map<String, dynamic> toJson()=>{
-  //   "id" : id,
-  //   "title": title,
-  //   "desc" : desc,
-  //   "isCompleted" :isCompleted,
-  // };
+  factory TodoModel.fromJson(Map<String,dynamic> json){
+    return TodoModel(
+      id: json["id"],
+      title: json["title"],
+      isCompleted : json["isCompleted"]
+    );
+  }
+  Map<String, dynamic> toJson()=>{
+    "id" : id,
+    "title": title,
+    "isCompleted" :isCompleted,
+  };
 
   @override
   List<Object?> get props => [id, title,isCompleted];
+
 }

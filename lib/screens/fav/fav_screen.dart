@@ -27,7 +27,7 @@ class _FavPageState extends State<FavPage> {
           appBar: AppBar(
             title: Text(
               'Your favourite ',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
             centerTitle: true,
           ),

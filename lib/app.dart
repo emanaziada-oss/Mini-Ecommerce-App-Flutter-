@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:myproject/provider_todo/todo_provider_screen.dart';
 import 'package:myproject/screens/login_screen.dart';
 import 'package:myproject/screens/product/product_wrapper.dart';
 import 'package:myproject/screens/signup_screen.dart';
 import 'package:myproject/screens/splash_screen.dart';
+import 'package:myproject/screens/todo_screen.dart';
 import 'package:myproject/screens/welcom_screen.dart';
+
+import 'getx/todo_getx_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,14 +20,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
-          // '/':(context)=>  TodoScreen(),
-          // '/':(context)=>  TodoScreenProvider(),
-          // '/': (context) => TodoScreengetx(),
           '/': (context) => const SplashScreen(),
           '/welcome' : (context) => const WelcomeScreen(),
           '/login' : (context)=> LoginForm(),
           '/signup' : (context)=>  SignupScreen(),
           '/products' : (context)=> const  ProductsPageWrapper(),
+          '/todo':(context)=>  TodoScreen(),
+          '/todoprovider':(context)=>  TodoScreenProvider(),
+          '/todogetx': (context) => TodoScreengetx(),
         },
       );
 

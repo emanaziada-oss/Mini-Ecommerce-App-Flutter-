@@ -1,5 +1,6 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:myproject/screens/profile/profile_screen.dart';
 import '../screens/cart/cart_screen.dart';
 import '../screens/fav/fav_screen.dart';
 import '../screens/product/product_wrapper.dart';
@@ -19,11 +20,13 @@ final int currentIndex ;
         Icon(Icons.shopping_cart, color: colorScheme.onPrimary),
         Icon(Icons.home, color: colorScheme.onPrimary),
         Icon(Icons.favorite, color: colorScheme.onPrimary),
+        Icon(Icons.person , color: colorScheme.onPrimary,)
       ],
       inactiveIcons: const [
         Text("Cart", style: TextStyle(color:  Colors.black )),
         Text("Home", style: TextStyle(color:  Colors.black )),
         Text("Favorite", style: TextStyle(color:  Colors.black)),
+        Text("Profile", style: TextStyle(color:  Colors.black)),
       ],
 
       //  Colors that change with theme
@@ -66,6 +69,12 @@ final int currentIndex ;
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (_) => const FavPage()),
+            );
+            break;
+          case 3:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) =>  ProfileScreen()),
             );
             break;
         }

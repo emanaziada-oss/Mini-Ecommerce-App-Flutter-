@@ -7,7 +7,7 @@ class TodoProvider extends ChangeNotifier {
 
   void add(String title) {
     final todo = TodoModel(
-      id: DateTime.now().microsecondsSinceEpoch,
+      id: "${DateTime.now().microsecondsSinceEpoch}",
       title: title,
       isCompleted: false,
     );
@@ -15,12 +15,12 @@ class TodoProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removeTodo(int id) {
+  void removeTodo(String id) {
     _todos.removeWhere((todo) => todo.id == id);
     notifyListeners();
   }
 
-  void toggleTask(int id) {
+  void toggleTask(String id) {
     final index = _todos.indexWhere((todo) => todo.id == id);
     if (index != -1) {
       _todos[index] = _todos[index].copyWith(

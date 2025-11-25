@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsProfile = 'assets/profile.jpg';
   static const String sign1 = 'assets/sign/1.png';
   static const String welcome1 = 'assets/welcome/1.png';
   static const String welcome2 = 'assets/welcome/2.png';

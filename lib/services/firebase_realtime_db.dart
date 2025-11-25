@@ -10,11 +10,11 @@ class FirebaseUserService {
   final FirebaseDatabase _db = FirebaseDatabase.instance;
 
   //constants
-static const String collectionPath = 'users';
+  static const String collectionPath = 'users';
 
 // insert user data
 
-Future<bool> addUserData (AppUser user) async{
+  Future<bool> addUserData (AppUser user) async{
   try{
     await _db.ref('$collectionPath/${user.uid}').set(user.toJson());
     return true;
@@ -37,6 +37,7 @@ Future<bool> addUserData (AppUser user) async{
     }on FirebaseException catch(e){{
       rethrow;
     }}
+
   }
   // update user data
   Future<bool> updateUserData(AppUser user) async {

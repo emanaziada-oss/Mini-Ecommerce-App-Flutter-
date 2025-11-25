@@ -1,16 +1,68 @@
-# myproject
+# Mini Ecommerce App – Flutter
 
-A new Flutter project.
+Mini Ecommerce App is a cross-platform e-commerce application built using Flutter, delivering a modern shopping experience across Android, iOS, Web, Windows, macOS, and Linux.
 
-## Getting Started
+## 🚀 Features Overview
+- Cross-platform support
+- Clean architecture
+- Multiple state‑management approaches
+- Offline mode using Hive
+- Firebase authentication & realtime syncing
 
-This project is a starting point for a Flutter application.
+## 📱 App Screens
+- Splash Screen  
+- Welcome Screen  
+- Login Screen  
+- Register Screen  
+- Product Screen  
+- Product Details Screen  
+- Cart Screen (Hive)  
+- Favorites Screen (Hive)  
+- Profile Screen  
+- Todo App (Cubit + Firebase Realtime DB)  
+- Todo App (Provider)  
+- Todo App (GetX)
 
-A few resources to get you started if this is your first Flutter project:
+## 🧠 State Management
+- Cubit → Auth, Cart, Favorites, Product API
+- Provider → Todo module
+- GetX → Todo module
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🌐 API Integration
+- Dio for HTTP calls  
+- PrettyDioLogger for logging
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 💾 Offline Storage
+- Hive for cart, favorites, cached products
+
+## 🔐 Authentication
+- Firebase Authentication (Email/Password)
+
+## 🔄 Firebase Realtime Database
+- Used for syncing Todo App (Cubit version)
+
+## 🧩 Architecture Highlights
+- Clean folder structure  
+- Separation of concerns  
+- Reusable widgets  
+- Responsive UI  
+- Scalable codebase  
+
+## 📚 Technologies Used
+- Flutter  
+- Cubit, Provider, GetX  
+- Firebase Auth, Firebase Realtime Database  
+- Dio, PrettyDioLogger  
+- Hive  
+
+## 📦 Setup
+```bash
+flutter pub get
+flutter run
+```
+
+## 🤝 Contributing
+Pull requests are welcome.
+
+## 📄 License
+MIT

@@ -7,6 +7,7 @@ class AppUser extends Equatable {
   final String? phone;
   final String? address;
 
+
   const AppUser({
     required this.displayName,
     required this.email,

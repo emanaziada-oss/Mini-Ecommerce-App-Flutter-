@@ -23,14 +23,13 @@ class _CartPageState extends State<CartPage> {
   }
   @override
   Widget build(BuildContext context) {
-    final cartBox = Hive.box<CartItem>('cart');
 
     return Scaffold(
         bottomNavigationBar: const BottomNavBar(currentIndex: 0),
         appBar: AppBar(
           title: Text(
             'Your Cart',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle( fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
         ),

@@ -225,6 +225,7 @@
 //   }
 // }
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/bloc/auth/auth_cubit.dart';
@@ -291,7 +292,7 @@ class _LoginFormState extends State<LoginForm> {
                           current is AuthSuccess || current is AuthFailure,
                           listener: (context, state) {
                             if (state is AuthSuccess) {
-                              final email = state.user!.email ?? 'User';
+                              final email = state.user!.email?? 'User';
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(content: Text('Welcome $email')),
                               );
@@ -314,41 +315,6 @@ class _LoginFormState extends State<LoginForm> {
                             return Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                // TextFormField(
-                                //   controller: _emailController,
-                                //   keyboardType: TextInputType.emailAddress,
-                                //   decoration: InputDecoration(
-                                //     labelText: 'Email',
-                                //     border: OutlineInputBorder(),
-                                //   ),
-                                //   validator: (value) {
-                                //     if (value == null || value.isEmpty) {
-                                //       return 'Please enter your email';
-                                //     }
-                                //     if (!value.contains('@')) {
-                                //       return 'Invalid email format';
-                                //     }
-                                //     return null;
-                                //   },
-                                // ),
-                                // TextFormField(
-                                //   controller: _passwordController,
-                                //   obscureText: true,
-                                //   decoration: InputDecoration(
-                                //     labelText: "Password",
-                                //     border: OutlineInputBorder(),
-                                //   ),
-                                //   validator: (value) {
-                                //     if (value == null || value.isEmpty) {
-                                //       return "Please enter your password";
-                                //     }
-                                //     if (value.length < 6) {
-                                //       return "Password must be at least 6 characters";
-                                //     }
-                                //     return null;
-                                //   },
-                                // ),
-
                                 CustomTextFormField(
                                   text: 'Email',
                                   type: 'email',
@@ -375,13 +341,11 @@ class _LoginFormState extends State<LoginForm> {
                                     ),
                                   ),
                                   onPressed: () {
-                                    // if (_formKey.currentState!.validate()) {
-                                      // call cubit login
                                       context.read<AuthCubit>().login(
                                         _emailController.text.trim(),
                                         _passwordController.text.trim(),
                                       );
-                                    // }
+                                      print( 'user: ${FirebaseAuth.instance.currentUser}');
                                   },
                                   child: const Text(
                                     'Sign In',

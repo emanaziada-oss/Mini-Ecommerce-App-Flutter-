@@ -6,7 +6,7 @@ class TodoController extends GetxController {
 
   void addToDo(String title) {
     final todo = TodoModel(
-      id: DateTime.now().microsecondsSinceEpoch,
+      id: "${DateTime.now().microsecondsSinceEpoch}",
       title: title,
       isCompleted: false,
     );

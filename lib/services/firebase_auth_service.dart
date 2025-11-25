@@ -10,9 +10,6 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 Future<User?> login (String email, String pass) async{
   try{
     UserCredential userCredential = await _auth.signInWithEmailAndPassword(email: email, password: pass);
-    // if(userCredential.user !=null){
-    //   return userCredential.user;
-    // }
     return userCredential.user;
   }on FirebaseAuthException catch(e){
     rethrow;
@@ -28,14 +25,6 @@ Future<User?> login (String email, String pass) async{
     }
   }
 
-  Future<bool> signUp () async{
-  try{
-    await _auth.signOut();
-    return true;
-  } on FirebaseAuthException catch(e){
-    rethrow;
-  }
-  }
 
   Future<bool> signOut () async{
     try{
